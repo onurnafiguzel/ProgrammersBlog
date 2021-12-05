@@ -23,11 +23,6 @@ namespace ProgrammersBlog.Data.Concrete
             _context = context;
         }
 
-        public void Dispose()
-        {
-            throw new NotImplementedException();
-        }
-
         public IArticleRepository Articles => _articleRepository ?? new EfArticleRepository(_context);
         public ICategoryRepository Categories => _categoryRepository ?? new EfCategoryRepository(_context);
         public ICommentRepository Comments => _commentRepository ?? new EfCommentRepository(_context);
@@ -36,6 +31,11 @@ namespace ProgrammersBlog.Data.Concrete
         public async Task<int> SaveAsync()
         {
             return await _context.SaveChangesAsync();
+        }
+
+        public async ValueTask DisposeAsync()
+        {
+            await _context.DisposeAsync();
         }
     }
 }

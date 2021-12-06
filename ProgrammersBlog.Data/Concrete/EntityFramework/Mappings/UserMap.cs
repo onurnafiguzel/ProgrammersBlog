@@ -57,7 +57,8 @@ namespace ProgrammersBlog.Data.Concrete.EntityFramework.Mappings
                 ModifiedDate = DateTime.Now,
                 Desciption = "İlk admin kullanıcı",
                 Note = "Admin kullanıcısı",
-                PasswordHash = Encoding.ASCII.GetBytes("0192023A7BBD73250516F069DF18B500") //MD5
+                PasswordHash = Encoding.ASCII.GetBytes("0192023A7BBD73250516F069DF18B500"), //MD5
+                Picture = "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSX4wVGjMQ37PaO4PdUVEAliSLi8-c2gJ1zvQ&usqp=CAU"
             });
         }
     }

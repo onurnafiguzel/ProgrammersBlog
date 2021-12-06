@@ -5,7 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Abstract\" />
+    <ProjectReference Include="..\ProgrammersBlog.Entities\ProgrammersBlog.Entities.csproj" />
+    <ProjectReference Include="..\ProgrammersBlog.Shared\ProgrammersBlog.Shared.csproj" />
   </ItemGroup>
 
 </Project>

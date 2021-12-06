@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ProgrammersBlog.Entities.Concrete;
+using ProgrammersBlog.Entities.Dtos;
 using ProgrammersBlog.Shared.Utilities.Results.Abstract;
 
 namespace ProgrammersBlog.Services.Abstract

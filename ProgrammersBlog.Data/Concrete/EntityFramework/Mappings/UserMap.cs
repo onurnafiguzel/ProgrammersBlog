@@ -41,6 +41,25 @@ namespace ProgrammersBlog.Data.Concrete.EntityFramework.Mappings
             builder.Property(u => u.IsDeleted).IsRequired();
             builder.Property(u => u.Note).HasMaxLength(500);
             builder.ToTable("Users");
+            builder.HasData(new User
+            {
+                Id = 1,
+                RoleId = 1,
+                FirstName = "Onur Nafi",
+                LastName = "Güzel",
+                UserName = "onurguzel",
+                Email = "ongguzel@gmail.com",
+                IsActive = true,
+                IsDeleted = false,
+                CreatedByName = "InitialCreate",
+                CreatedDate = DateTime.Now,
+                ModifiedByName = "InitialCreate",
+                ModifiedDate = DateTime.Now,
+                Desciption = "İlk admin kullanıcı",
+                Note = "Admin kullanıcısı",
+                PasswordHash = Encoding.ASCII.GetBytes("0192023A7BBD73250516F069DF18B500"), //MD5
+                Picture = "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSX4wVGjMQ37PaO4PdUVEAliSLi8-c2gJ1zvQ&usqp=CAU"
+            });
         }
     }
 }

@@ -57,5 +57,9 @@ namespace ProgrammersBlog.Entities.Dtos
         public int CategoryId { get; set; }
 
         public Category Category { get; set; }
+
+        [DisplayName("Aktif mi?")]
+        [Required(ErrorMessage = "{0} alanı boş geçilemez.")]
+        public bool IsActive { get; set; }
     }
 }

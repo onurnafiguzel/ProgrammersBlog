@@ -13,4 +13,10 @@
     <ProjectReference Include="..\ProgrammersBlog.Services\ProgrammersBlog.Services.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Controllers\" />
+    <Folder Include="Models\" />
+    <Folder Include="Views\Shared\" />
+  </ItemGroup>
+
 </Project>

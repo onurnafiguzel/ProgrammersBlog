@@ -93,7 +93,7 @@
             </footer>
         </div>
     </div>
-   
+    @await Html.PartialAsync("_LayoutJsPartial");
     @await RenderSectionAsync("Scripts", false);
 </body>
 </html>

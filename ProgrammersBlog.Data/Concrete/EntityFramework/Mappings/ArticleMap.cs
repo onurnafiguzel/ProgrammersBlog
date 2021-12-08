@@ -26,7 +26,7 @@ namespace ProgrammersBlog.Data.Concrete.EntityFramework.Mappings
             builder.Property(a => a.SeoDescription).IsRequired();
             builder.Property(a => a.SeoTags).IsRequired();
             builder.Property(a => a.SeoTags).HasMaxLength(70);
-            builder.Property(a => a.ViewCount).IsRequired();
+            builder.Property(a => a.ViewsCount).IsRequired();
             builder.Property(a => a.CommentCount).IsRequired();
             builder.Property(a => a.Thumbnail).IsRequired();
             builder.Property(a => a.Thumbnail).HasMaxLength(250);
@@ -63,7 +63,7 @@ namespace ProgrammersBlog.Data.Concrete.EntityFramework.Mappings
                     ModifiedDate = DateTime.Now,
                     Note = "C# 9.0 ve .Net 5. Yenilikleri",
                     UserId = 1,
-                    ViewCount = 100,
+                    ViewsCount = 100,
                     CommentCount = 1
                 },
                 new Article
@@ -86,7 +86,7 @@ namespace ProgrammersBlog.Data.Concrete.EntityFramework.Mappings
                     ModifiedDate = DateTime.Now,
                     Note = "C++ 11.0 ve 19 Yenilikleri",
                     UserId = 1,
-                    ViewCount = 295,
+                    ViewsCount = 295,
                     CommentCount = 1
                 },
                 new Article
@@ -109,7 +109,7 @@ namespace ProgrammersBlog.Data.Concrete.EntityFramework.Mappings
                     ModifiedDate = DateTime.Now,
                     Note = "JS ES2019 ve ES2020 Yenilikleri",
                     UserId = 1,
-                    ViewCount = 12,
+                    ViewsCount = 12,
                     CommentCount = 1
                 });
         }

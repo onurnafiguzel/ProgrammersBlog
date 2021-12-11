@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.Json;
 using System.Threading.Tasks;
 using ProgrammersBlog.Entities.Dtos;
 using ProgrammersBlog.Mvc.Areas.Admin.Models;
@@ -34,12 +35,26 @@ namespace ProgrammersBlog.Mvc.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        public async IActionResult Add(CategoryAddDto categoryAddDto)
+        public async Task<IActionResult> Add(CategoryAddDto categoryAddDto)
         {
-            var categoryAjaxModel = new CategoryAddAjaxViewModel
+            if (ModelState.IsValid)
             {
-                CategoryAddPartial = await this.RenderViewToStringAsync("_CategoryAddPartial", categoryAddDto),
-            };
+                var result = await _categoryService.Add(categoryAddDto, "Onur Nafi Güzel");
+                if (result.ResultStatus == ResultStatus.Success)
+                {
+                    var categoryAddAjaxModel = JsonSerializer.Serialize(new CategoryAddAjaxViewModel
+                    {
+                        CategoryDto = result.Data,
+                        CategoryAddPartial = await this.RenderViewToStringAsync("_CategoryAddPartial", categoryAddDto)
+                    });
+                    return Json(categoryAddAjaxModel);
+                }
+            }
+            var categoryAddAjaxErrorModel = JsonSerializer.Serialize(new CategoryAddAjaxViewModel
+            {
+                CategoryAddPartial = await this.RenderViewToStringAsync("_CategoryAddPartial", categoryAddDto)
+            });
+            return Json(categoryAddAjaxErrorModel);
         }
     }
 }

@@ -324,7 +324,7 @@
                         const form = $('#form-category-add');
                         const actionUrl = form.attr('action');
                         const dataToSend = form.serialize();
-                        $.post(actionUrl, dataToSend).done(function (data) {
+                        $.post(actionUrl, dataToSend).done(function(data) {
                             console.log(data);
                             const categoryAddAjaxModel = jQuery.parseJSON(data);
                             console.log(categoryAddAjaxModel);
@@ -351,6 +351,13 @@
                                 $('#categoriesTable').append(newTableRowObject);
                                 newTableRowObject.fadeIn(3500);
                                 toastr.success(`${categoryAddAjaxModel.CategoryDto.Message}`, 'Başarılı işlem!')
+                            } else {
+                                let summaryText = "";
+                                $('#validation-summary > ul >li').each(function() {
+                                    let text = $(this).text();
+                                    summaryText = `*${text}\n`;
+                                });
+                                toastr.warning(summaryText);
                             }
                         });
                     });

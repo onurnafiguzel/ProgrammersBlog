@@ -338,12 +338,12 @@
                                 <td>${categoryAddAjaxModel.CategoryDto.Category.Id}</td>
                                 <td>${categoryAddAjaxModel.CategoryDto.Category.Name}</td>
                                 <td>${categoryAddAjaxModel.CategoryDto.Category.Description}</td>
-                                <td>${categoryAddAjaxModel.CategoryDto.Category.IsActive}</td>
-                                <td>${categoryAddAjaxModel.CategoryDto.Category.IsDeleted}</td>
+                                <td>${convertFirstLetterTuUpperCase(categoryAddAjaxModel.CategoryDto.Category.IsActive.toString())}</td>
+                                <td>${convertFirstLetterTuUpperCase(categoryAddAjaxModel.CategoryDto.Category.IsDeleted.toString())}</td>
                                 <td>${categoryAddAjaxModel.CategoryDto.Category.Note}</td>
-                                <td>${categoryAddAjaxModel.CategoryDto.Category.CreatedDate}</td>
+                                <td>${convertToShortDate(categoryAddAjaxModel.CategoryDto.Category.CreatedDate)}</td>
                                 <td>${categoryAddAjaxModel.CategoryDto.Category.CreatedByName}</td>
-                                <td>${categoryAddAjaxModel.CategoryDto.Category.ModifiedDate}</td>
+                                <td>${convertToShortDate(categoryAddAjaxModel.CategoryDto.Category.ModifiedDate)}</td>
                                 <td>${categoryAddAjaxModel.CategoryDto.Category.ModifiedByName}</td>
                             </tr>`;
                                 const newTableRowObject = $(newTableRow);

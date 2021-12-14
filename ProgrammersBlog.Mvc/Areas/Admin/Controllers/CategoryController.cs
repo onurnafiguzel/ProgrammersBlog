@@ -58,6 +58,12 @@ namespace ProgrammersBlog.Mvc.Areas.Admin.Controllers
             return Json(categoryAddAjaxErrorModel);
         }
 
+        [HttpGet]
+        public IActionResult Update(int categoryId)
+        {
+            return View();
+        }
+
         public async Task<JsonResult> GetAllCategories()
         {
             var result = await _categoryService.GetAllByNonDelete();

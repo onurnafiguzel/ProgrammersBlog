@@ -52,7 +52,11 @@ namespace ProgrammersBlog.Services.Concrete
             if (result)
             {
                 var category = await _unitOfWork.Categories.GetAsync(c => c.Id == categoryId);
+                var categorUpdateDto = _mapper.Map<CategoryUpdateDto>(category);
+                return new DataResult<CategoryUpdateDto>(ResultStatus.Success, categorUpdateDto);
             }
+
+            return new DataResult<CategoryUpdateDto>(ResultStatus.Error, "Böyle bir kategori bulunamadı.", null);
         }
 
         public async Task<IDataResult<CategoryListDto>> GetAll()
